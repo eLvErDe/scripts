@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 # Written by Adam Cécile (Le_Vert) <acecile@le-vert.net>
 #
@@ -46,7 +47,7 @@ except:
 # Check arguments
 import argparse
 parser = argparse.ArgumentParser(description='This is a script to remotely reboot a NetGear CVBG834G router')
-parser.add_argument('-i','--ip', help='IP address of the router (ie: 192.168.100.1 which is the hardcoded IP when running in brdiged mode)',required=True)
+parser.add_argument('-i','--ip', help='IP address of the router (ie: 192.168.100.1 which is the hardcoded IP when running in bridged mode)',required=True)
 parser.add_argument('-u','--user',help='Username to log into the Web management interface (default is "admin")', required=True)
 parser.add_argument('-p','--password',help='Password to log into the Web management interface (default is "password")', required=True)
 args = parser.parse_args()

@@ -70,11 +70,16 @@ for page in range(1, max_page+1):
   total_keys = total_keys + nr_keys_added
 
 print_err("Total keys found: %s\n" % str(total_keys))
-print_err("Without duplicates: %s\n" % str(len(r_keys)))
+
+# @_@
+# eval(z): turns a string with array syntax into a real array
+r_keys_no_dup = [eval(z) for z in list(set([str(x) for x in r_keys]))]
+
+print_err("Without duplicates: %s\n" % str(len(r_keys_no_dup)))
+
 
 # Display all keys :)
-for key in r_keys:
+for key in r_keys_no_dup:
   key = ' | '.join(key)
   key = re.sub(r' \| ',' = ', key, 1)
   print key
-
